@@ -1,69 +1,90 @@
-/* Global WonderLife Clean Style */
+/* ==============================
+   WONDERLIFE – LINK BUTTONS
+   ============================== */
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f5f5f7;
-    color: #111;
-    line-height: 1.7;
+.section-title {
+    font-size: 32px;
+    text-align: center;
+    color: var(--accent);
+    margin-bottom: 30px;
+    text-shadow: 0 0 25px var(--accent);
+    animation: glowPulse 3.5s infinite;
+    font-weight: 800;
 }
 
-header {
-    background: #7d00ff;
-    padding: 20px 40px;
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
+.wl-links {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav a {
-    color: white;
-    margin-left: 20px;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px;
-    background: white;
-    border-radius: 10px;
-    margin-top: 40px;
-    box-shadow: 0 0 25px rgba(0,0,0,0.08);
-}
-
-.button {
-    display: inline-block;
-    background: #7d00ff;
-    color: white;
-    padding: 14px 22px;
-    border-radius: 6px;
-    font-size: 17px;
-    text-decoration: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
     margin-top: 20px;
 }
 
-.button:hover {
-    background: #5f00c6;
-}
-
-h1, h2 {
-    color: #5400b5;
-}
-
-footer {
-    margin-top: 40px;
+/* MAIN BUTTON */
+.wl-btn {
+    background: linear-gradient(135deg, var(--accent2), var(--accent));
+    padding: 14px 26px;
+    border-radius: 14px;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    box-shadow: 0 0 25px var(--accent2);
+    transition: 0.25s;
+    display: inline-block;
     text-align: center;
-    padding: 20px;
-    font-size: 14px;
-    color: #666;
+    min-width: 260px;
+    border: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button Hover FX */
+.wl-btn:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 0 45px var(--accent);
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+}
+
+/* SHINE EFFECT */
+.wl-btn:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.25),
+        transparent
+    );
+    transform: skewX(-20deg);
+}
+
+.wl-btn:hover:after {
+    animation: shine 0.8s forwards;
+}
+
+/* DISCORD SPECIAL BUTTON */
+.wl-btn.wl-discord {
+    background: linear-gradient(135deg, #5865F2, #4752C4);
+    box-shadow: 0 0 25px rgba(88, 101, 242, 0.8);
+}
+
+.wl-btn.wl-discord:hover {
+    box-shadow: 0 0 45px rgba(88, 101, 242, 1);
+}
+
+/* ANIMATIONS */
+
+@keyframes shine {
+    0% { left: -120%; }
+    100% { left: 120%; }
+}
+
+@keyframes glowPulse {
+    0% { text-shadow: 0 0 15px var(--accent); }
+    50% { text-shadow: 0 0 35px var(--accent2); }
+    100% { text-shadow: 0 0 15px var(--accent); }
 }
