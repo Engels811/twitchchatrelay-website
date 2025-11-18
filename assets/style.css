@@ -266,3 +266,35 @@ footer {
     margin-bottom: 10px;
     text-shadow: var(--glow);
 }
+
+/* --- LOGIN BOX --- */
+
+.login-box {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 35px;
+    background: var(--card-bg);
+    border-radius: 18px;
+    box-shadow: var(--glow);
+    text-align: center;
+}
+
+/* TWITCH BUTTON */
+
+.twitch-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 28px;
+    font-size: 20px;
+    color: #fff;
+    background: linear-gradient(135deg, #9146FF, #772ce8);
+    border-radius: 14px;
+    text-decoration: none;
+    box-shadow: 0 0 25px rgba(145,70,255,0.9);
+    transition: 0.2s;
+}
+
+.twitch-btn:hover {
+    transform: translateY(-5px) scale(1.04);
+    box-shadow: 0 0 40px rgba(145,70,255,1);
+}
