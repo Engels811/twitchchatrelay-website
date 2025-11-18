@@ -2,39 +2,96 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>TwitchChat Relay – Dein Twitch → Discord Chat Bot</title>
+    <title>WonderLife Network – Neon Website</title>
     <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-    TwitchChat Relay
+    <div class="title">WonderLife Network</div>
+
     <nav>
         <a href="index.html">Home</a>
         <a href="features.html">Features</a>
         <a href="login.html">Login</a>
         <a href="docs.html">Docs</a>
     </nav>
+
+    <button id="toggleTheme">☀️ / 🌙</button>
 </header>
 
+<!-- CONTAINER -->
 <div class="container">
 
-    <h1>Der einfachste Weg, Twitch und Discord zu verbinden</h1>
+    <h1 class="section-title">Welcome to the WonderLife Network</h1>
+
     <p>
-        TwitchChat Relay spiegelt deinen Twitch-Chat in Discord, sendet Live-Alerts,
-        Clips, Event-Benachrichtigungen und verbindet deine Community in Echtzeit.
-        Schnell. Sauber. Automatisch.
+        Dies ist die zentrale Übersicht aller WonderLife Network Plattformen.
+        Alle Links sind im offiziellen WonderLife Neon Style dargestellt – inklusive 
+        Glow Animationen, Hover Effekten und Discord Highlight Button.
     </p>
 
-    <a href="login.html" class="button">Mit Twitch verbinden</a>
-    <a href="features.html" class="button" style="background:#333;">Mehr erfahren</a>
+    <!-- ==============================
+         WONDERLIFE NETWORK LINKS
+         ============================== -->
+
+    <h2 class="section-title">WonderLife Network Links</h2>
+
+    <div class="wl-links">
+
+        <a class="wl-btn" href="https://wonderlife.city" target="_blank">🌐 WonderLife City</a>
+
+        <a class="wl-btn" href="https://www.getshirts.de/index.php?page=shop&id=engels811"
+           target="_blank">👕 WL Merch Shop</a>
+
+        <a class="wl-btn" href="https://wonderlife-store.tebex.io"
+           target="_blank">🛒 WonderLife Tebex Store</a>
+
+        <a class="wl-btn" href="https://status.wonderlife-city.de"
+           target="_blank">📡 WL System Status</a>
+
+
+        <a class="wl-btn" href="https://www.facebook.com/WonderLife.City.Roleplay"
+           target="_blank">📘 Facebook</a>
+
+        <a class="wl-btn" href="https://www.instagram.com/wonderlife.city/"
+           target="_blank">📸 Instagram</a>
+
+        <a class="wl-btn" href="https://www.youtube.com/@Wonder-Life-City"
+           target="_blank">▶️ YouTube</a>
+
+
+        <a class="wl-btn wl-discord" href="https://discord.gg/njY4NEupUB"
+           target="_blank">🔗 WonderLife Network Discord</a>
+
+    </div>
 
 </div>
 
+<!-- FOOTER -->
 <footer>
-    © 2025 TwitchChat Relay – WonderLife Network Style
+    © 2025 WonderLife Network – Neon Edition
 </footer>
+
+
+<!-- DARKMODE SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
+    const toggle = document.getElementById("toggleTheme");
+
+    toggle.addEventListener("click", () => {
+        body.classList.toggle("light");
+        localStorage.setItem("theme", body.classList.contains("light") ? "light" : "dark");
+    });
+
+    if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light");
+    }
+});
+</script>
 
 </body>
 </html>
