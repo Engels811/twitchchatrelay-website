@@ -2,44 +2,183 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Doku – TwitchChat Relay</title>
+    <title>Docs – WonderLife Network</title>
     <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-    TwitchChat Relay
+    <div class="title">WonderLife Network</div>
+
     <nav>
         <a href="index.html">Home</a>
         <a href="features.html">Features</a>
         <a href="login.html">Login</a>
         <a href="docs.html">Docs</a>
     </nav>
+
+    <button id="toggleTheme">☀️ / 🌙</button>
 </header>
 
+
+<!-- MAIN CONTENT -->
 <div class="container">
 
-    <h1>Dokumentation</h1>
+    <!-- WL LOGO -->
+    <img src="assets/wl-logo.png" class="logo-glow" alt="WonderLife Logo">
 
-    <h2>📌 Commands</h2>
-    <ul>
-        <li><b>/login</b> – Starte den Twitch-OAuth Login</li>
-        <li><b>/confirm &lt;code&gt;</b> – Bestätige deinen Login</li>
-        <li><b>/status</b> – Prüfe Bot Status</li>
-    </ul>
+    <!-- PAGE TITLE -->
+    <h1 class="animated-title">DEVELOPER DOCS</h1>
+    <p class="subline">
+        Commands, Setup & API – Alles, was du für deinen WonderLife Bot brauchst.
+    </p>
 
-    <h2>⚙ Setup</h2>
-    <p>1. Lade den Bot ein<br>
-       2. Erstelle die benötigten Kanäle<br>
-       3. Verbinde deinen Twitch Account mit /login<br>
-       4. Fertig!</p>
+
+    <!-- SECTION: COMMANDS -->
+    <h2 class="section-title">📡 Commands</h2>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <h3>/login</h3>
+            <p>
+                Startet den Twitch OAuth Login. Der Bot schickt dir eine private Login-URL
+                und zugehörigen Code.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>/confirm &lt;code&gt;</h3>
+            <p>
+                Bestätigt den Twitch Login. Danach ist dein Account offiziell verknüpft.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>/status</h3>
+            <p>
+                Zeigt dir den globalen Bot-Status an: Online / Offline / API-Live.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>/unlink</h3>
+            <p>
+                Trennt deinen Twitch Account vom Bot. Alles wird sauber abgemeldet.
+            </p>
+        </div>
+
+    </div>
+
+
+
+    <!-- SECTION: SETUP -->
+    <h2 class="section-title">⚙ Setup Anleitung</h2>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <h3>1️⃣ Bot einladen</h3>
+            <p>
+                Lade den Bot über deinen OAuth2 Invite-Link auf deinen Discord Server ein.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>2️⃣ Channel konfigurieren</h3>
+            <p>
+                Richte Channels für Chat-Sync, Logs, Clips und Live-Meldungen ein.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>3️⃣ Twitch Account verbinden</h3>
+            <p>
+                Nutze <b>/login</b>, bestätige den Code und verbinde Twitch ↔ Discord.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>4️⃣ Fertig</h3>
+            <p>
+                Ab jetzt übernimmt WonderLife den kompletten Sync automatisch.
+            </p>
+        </div>
+
+    </div>
+
+
+
+    <!-- SECTION: EVENTS -->
+    <h2 class="section-title">📡 Event System</h2>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <h3>🎬 New Clip Event</h3>
+            <p>
+                Sobald ein neuer Clip erstellt wird, sendet der Bot ihn automatisch
+                in deinen ausgewählten Clip-Kanal.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>👤 Follow Event</h3>
+            <p>
+                Zeigt neue Follower mit Profilbild, Username und Follow-Zeit im Discord an.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>📢 Live Event</h3>
+            <p>
+                Beim Starten deines Streams postet der Bot ein Live-Panel
+                im WL-Stil.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <h3>🔨 Moderation Logs</h3>
+            <p>
+                Bans, Timeouts, Purges – alles wird in deinem ModLog protokolliert.
+            </p>
+        </div>
+
+    </div>
+
 
 </div>
 
+
+
+<!-- FOOTER -->
 <footer>
-    © 2025 TwitchChat Relay – Documentation
+    © 2025 WonderLife Network – Developer Documentation
 </footer>
+
+
+
+<!-- DARKMODE SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
+    const toggle = document.getElementById("toggleTheme");
+
+    toggle.addEventListener("click", () => {
+        body.classList.toggle("light");
+        localStorage.setItem(
+            "theme",
+            body.classList.contains("light") ? "light" : "dark"
+        );
+    });
+
+    if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light");
+    }
+});
+</script>
 
 </body>
 </html>
