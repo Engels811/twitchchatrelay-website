@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Terms of Service – WonderLife Network</title>
+    <link rel="stylesheet" href="assets/style.css">
+
+    <style>
+        .tos-card {
+            background: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 16px;
+            box-shadow: var(--glow);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .tos-card h3 {
+            color: var(--accent);
+            margin-top: 0;
+            text-shadow: var(--glow);
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="title">WonderLife Network</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="login.html">Login</a>
+        <a href="docs.html">Docs</a>
+    </nav>
+
+    <button id="toggleTheme">☀️ / 🌙</button>
+</header>
+
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+    <!-- WL LOGO -->
+    <img src="assets/wl-logo.png" class="logo-glow" alt="WonderLife Logo">
+
+    <!-- TITLE -->
+    <h1 class="animated-title">TERMS OF SERVICE</h1>
+    <p class="subline">German + English Version</p>
+
+
+    <!-- ========================= -->
+    <!-- 🇩🇪 DEUTSCH SECTION -->
+    <!-- ========================= -->
+
+    <h2 class="section-title">🇩🇪 Deutsch</h2>
+
+    <div class="tos-card">
+        <h3>1. Nutzung des Bots</h3>
+        <p>
+            Der WonderLife Bot darf ausschließlich im Rahmen der Discord- und Twitch-Richtlinien 
+            verwendet werden. Jeglicher Missbrauch führt zur sofortigen Sperrung des Zugangs.
+        </p>
+    </div>
+
+    <div class="tos-card">
+        <h3>2. Haftungsausschluss</h3>
+        <p>
+            Wir übernehmen keine Verantwortung für Schäden, Datenverluste oder Unterbrechungen,
+            die durch den Einsatz des Bots entstehen können. Nutzung auf eigenes Risiko.
+        </p>
+    </div>
+
+    <div class="tos-card">
+        <h3>3. Änderungen am Dienst</h3>
+        <p>
+            Funktionen können jederzeit erweitert, verändert oder eingeschränkt werden,
+            ohne dass ein Anspruch auf Weiterbetrieb besteht.
+        </p>
+    </div>
+
+    <div class="tos-card">
+        <h3>4. Datenverarbeitung</h3>
+        <p>
+            Der Bot verarbeitet nur die Daten, die für seine Funktionsweise erforderlich sind.
+            Details hierzu findest du in unserer Datenschutzerklärung.
+        </p>
+    </div>
+
+    <div class="tos-card">
+        <h3>5. Kündigung</h3>
+        <p>
+            Durch Entfernen des Bots vom Server endet der Vertrag sofort
+            und alle verknüpften Daten werden gelöscht.
+        </p>
+    </div>
+
+
+
+    <!-- ========================= -->
+    <!-- 🇬🇧 ENGLISH SECTION -->
+    <!-- ========================= -->
+
+    <h2 class="section-title">🇬🇧 English</h2>
+
+    <div class="tos-card">
+        <h3>1. Usage of the Bot</h3>
+        <p>
+            The WonderLife Bot may only be used within the guidelines of Discord and Twitch.
+            Any misuse will result in immediate termination of access.
+        </p>
+    </div>
+
+    <div class="tos-card">
+        <h3>2. Disclaimer</h3>
+        <p>
+            We are not responsible for any damages, data loss, or interruptions that may occur.
+            Use at your own risk.
+        </p>
+    </div>
+
+    <div class="tos-card">
+        <h3>3. Service Modifications</h3>
+        <p>
+            Features may be changed, expanded, or restricted at any time without guarantee
+            of continued service.
+        </p>
+    </div>
+
+    <div class="tos-card">
+        <h3>4. Data Processing</h3>
+        <p>
+            The bot processes only data required for its operation.  
+            For details, please refer to our Privacy Policy.
+        </p>
+    </div>
+
+    <div class="tos-card">
+        <h3>5. Termination</h3>
+        <p>
+            Removing the bot from your server immediately terminates the contract
+            and deletes all associated data.
+        </p>
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+    © 2025 WonderLife Network – Terms of Service
+</footer>
+
+
+<!-- DARKMODE SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
+    const toggle = document.getElementById("toggleTheme");
+
+    toggle.addEventListener("click", () => {
+        body.classList.toggle("light");
+        localStorage.setItem(
+            "theme",
+            body.classList.contains("light") ? "light" : "dark"
+        );
+    });
+
+    if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light");
+    }
+});
+</script>
+
+</body>
+</html>
