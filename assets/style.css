@@ -1,0 +1,69 @@
+/* Global WonderLife Clean Style */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f7;
+    color: #111;
+    line-height: 1.7;
+}
+
+header {
+    background: #7d00ff;
+    padding: 20px 40px;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+    margin-top: 40px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.08);
+}
+
+.button {
+    display: inline-block;
+    background: #7d00ff;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 6px;
+    font-size: 17px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background: #5f00c6;
+}
+
+h1, h2 {
+    color: #5400b5;
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #666;
+}
