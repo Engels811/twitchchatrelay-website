@@ -237,3 +237,32 @@ footer {
     50%  { text-shadow: 0 0 45px var(--accent3); transform: scale(1.03); }
     100% { text-shadow: 0 0 20px var(--accent); }
 }
+
+/* --- FEATURE GRID --- */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.feature-card {
+    padding: 25px;
+    background: var(--card-bg);
+    border-radius: 18px;
+    box-shadow: var(--glow);
+    transition: 0.25s;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.feature-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 0 35px var(--accent3);
+}
+
+.feature-card h3 {
+    color: var(--accent);
+    margin-bottom: 10px;
+    text-shadow: var(--glow);
+}
