@@ -211,3 +211,29 @@ footer {
     text-align: center;
     color: var(--text);
 }
+
+/* Animated Hero Title */
+.animated-title {
+    text-align: center;
+    font-size: 50px;
+    color: var(--accent);
+    text-shadow: 0 0 35px var(--accent3);
+    margin-top: -5px;
+    animation: titleGlow 3.5s infinite ease-in-out;
+    letter-spacing: 4px;
+    font-weight: 900;
+}
+
+.subline {
+    text-align: center;
+    font-size: 20px;
+    opacity: 0.85;
+    margin-bottom: 40px;
+}
+
+/* Title animation */
+@keyframes titleGlow {
+    0%   { text-shadow: 0 0 20px var(--accent); }
+    50%  { text-shadow: 0 0 45px var(--accent3); transform: scale(1.03); }
+    100% { text-shadow: 0 0 20px var(--accent); }
+}
