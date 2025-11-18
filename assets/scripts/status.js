@@ -1,6 +1,6 @@
 async function loadBotStatus() {
     try {
-        const response = await fetch("bot-status.json?cacheBust=" + Date.now());
+        const response = await fetch("http://193.46.81.88/bot-status.json?cacheBust=" + Date.now());
         const data = await response.json();
 
         const el = document.getElementById("botStatus");
