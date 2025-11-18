@@ -2,41 +2,123 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Features – TwitchChat Relay</title>
+    <title>Features – WonderLife Network</title>
     <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-    TwitchChat Relay
+    <div class="title">WonderLife Network</div>
+
     <nav>
         <a href="index.html">Home</a>
         <a href="features.html">Features</a>
         <a href="login.html">Login</a>
         <a href="docs.html">Docs</a>
     </nav>
+
+    <button id="toggleTheme">☀️ / 🌙</button>
 </header>
 
+
+<!-- MAIN CONTENT -->
 <div class="container">
-    <h1>Features</h1>
 
-    <h2>🔄 Echtzeit Chat-Sync</h2>
-    <p>Twitch-Chat wird live in Discord gespiegelt – ohne Verzögerung.</p>
+    <!-- LOGO -->
+    <img src="assets/wl-logo.png" class="logo-glow" alt="WonderLife Logo">
 
-    <h2>📢 Live Alerts</h2>
-    <p>Der Bot postet automatisch, wenn du live gehst.</p>
+    <!-- PAGE TITLE -->
+    <h1 class="animated-title">FEATURES</h1>
+    <p class="subline">Was das WonderLife Network so einzigartig macht.</p>
 
-    <h2>🎬 Auto-Clip Posting</h2>
-    <p>Neue Clips werden sofort an deinen Clip-Kanal gesendet.</p>
 
-    <h2>⚙ Moderation Features</h2>
-    <p>Timeouts, Banns & Chat-Events kannst du in Discord anzeigen lassen.</p>
+    <!-- FEATURE GRID -->
+    <div class="feature-grid">
+
+        <!-- FEATURE 1 -->
+        <div class="feature-card">
+            <h3>🔄 Echtzeit Chat-Sync</h3>
+            <p>
+                Verbinde Twitch und Discord in einer lebendigen Zwei-Wege-Chat-Brücke –
+                ohne Delay, ohne Aussetzer, im WL-Neon-Style.
+            </p>
+        </div>
+
+        <!-- FEATURE 2 -->
+        <div class="feature-card">
+            <h3>📢 Live-Benachrichtigungen</h3>
+            <p>
+                Gehst du live? WonderLife postet automatisch Alerts im Discord –
+                inklusive Titel, Thumbnail & Livestatus.
+            </p>
+        </div>
+
+        <!-- FEATURE 3 -->
+        <div class="feature-card">
+            <h3>🎬 Auto-Clip Upload</h3>
+            <p>
+                Neue Twitch Clips werden sofort erkannt und in den Clip-Channel
+                deiner Wahl gepostet – automatisch.
+            </p>
+        </div>
+
+        <!-- FEATURE 4 -->
+        <div class="feature-card">
+            <h3>⚙ Moderation Events</h3>
+            <p>
+                Timeouts, Bans, VIP-Änderungen, Follows – alle Events
+                können in Discord protokolliert werden.
+            </p>
+        </div>
+
+        <!-- FEATURE 5 -->
+        <div class="feature-card">
+            <h3>🔐 Sicher & zuverlässig</h3>
+            <p>
+                Vollständig DSGVO-konform, sichere OAuth-Flows,
+                keine unnötige Datenspeicherung.
+            </p>
+        </div>
+
+        <!-- FEATURE 6 -->
+        <div class="feature-card">
+            <h3>🌐 WL-Network Integration</h3>
+            <p>
+                Kompletter WonderLife Network Style: Neon, Glow, Branding,
+                Animations & Speed optimiert.
+            </p>
+        </div>
+
+    </div>
+
 </div>
 
+
+<!-- FOOTER -->
 <footer>
-    © 2025 TwitchChat Relay – WonderLife Network Style
+    © 2025 WonderLife Network – Features
 </footer>
+
+
+<!-- DARKMODE SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
+    const toggle = document.getElementById("toggleTheme");
+
+    toggle.addEventListener("click", () => {
+        body.classList.toggle("light");
+        localStorage.setItem("theme",
+            body.classList.contains("light") ? "light" : "dark");
+    });
+
+    if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light");
+    }
+});
+</script>
 
 </body>
 </html>
