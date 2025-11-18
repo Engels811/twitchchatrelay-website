@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Twitch Login – Callback | WonderLife Network</title>
+    <link rel="stylesheet" href="assets/style.css">
+
+    <style>
+        .callback-box {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 35px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: var(--glow);
+            text-align: center;
+        }
+
+        .code-box {
+            background: rgba(255,255,255,0.08);
+            padding: 16px 25px;
+            border-radius: 14px;
+            font-size: 22px;
+            font-family: monospace;
+            margin: 20px auto;
+            width: 85%;
+            color: var(--accent);
+            text-shadow: 0 0 12px var(--accent3);
+            box-shadow: var(--glow);
+        }
+
+        .copy-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: var(--accent2);
+            border-radius: 10px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: var(--glow);
+        }
+
+        .copy-btn:hover {
+            background: var(--accent3);
+            box-shadow: 0 0 30px var(--accent3);
+        }
+
+        .qr-area {
+            margin-top: 25px;
+            opacity: 0.75;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="title">WonderLife Network</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="login.html">Login</a>
+        <a href="docs.html">Docs</a>
+    </nav>
+
+    <button id="toggleTheme">☀️ / 🌙</button>
+</header>
+
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+    <!-- LOGO -->
+    <img src="assets/wl-logo.png" class="logo-glow" alt="WonderLife Logo">
+
+    <!-- ANIMATED TITLE -->
+    <h1 class="animated-title">TWITCH LOGIN BESTÄTIGT</h1>
+    <p class="subline">Dein OAuth Code wurde erfolgreich empfangen.</p>
+
+    
+    <!-- CALLBACK BOX -->
+    <div class="callback-box">
+
+        <h2 class="section-title">Dein OAuth Code</h2>
+
+        <!-- CODE OUTPUT -->
+        <div id="wlCode" class="code-box">Lade...</div>
+
+        <!-- COPY BUTTON -->
+        <button class="copy-btn" onclick="copyCode()">📋 Code kopieren</button>
+
+        <p style="margin-top:20px; opacity:.8">
+            Gib den Code im Discord ein mit:<br>
+            <b>/confirm &lt;code&gt;</b>
+        </p>
+
+        <div class="qr-area">
+            <small>Falls du am Handy bist, Screenshot machen → später in Discord eingeben.</small>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+    © 2025 WonderLife Network – OAuth Callback
+</footer>
+
+
+<!-- DARKMODE SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
+    const toggle = document.getElementById("toggleTheme");
+
+    toggle.addEventListener("click", () => {
+        body.classList.toggle("light");
+        localStorage.setItem("theme",
+            body.classList.contains("light") ? "light" : "dark");
+    });
+
+    if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light");
+    }
+});
+</script>
+
+
+<!-- CODE READER -->
+<script>
+function getCodeFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("code");
+}
+
+function copyCode() {
+    const text = document.getElementById("wlCode").innerText;
+    navigator.clipboard.writeText(text);
+    alert("Code wurde kopiert.");
+}
+
+window.onload = () => {
+    const code = getCodeFromURL();
+    document.getElementById("wlCode").innerText =
+        code ? code : "❌ Kein Code gefunden – bitte Login erneut starten.";
+};
+</script>
+
+</body>
+</html>
