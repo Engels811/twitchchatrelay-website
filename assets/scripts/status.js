@@ -4,7 +4,6 @@ async function loadBotStatus() {
         const data = await response.json();
 
         const el = document.getElementById("botStatus");
-
         if (!el) return;
 
         if (data.status === "online") {
@@ -26,5 +25,5 @@ async function loadBotStatus() {
     }
 }
 
-setInterval(loadBotStatus, 15000);  
+setInterval(loadBotStatus, 15000);
 loadBotStatus();
