@@ -298,3 +298,26 @@ footer {
     transform: translateY(-5px) scale(1.04);
     box-shadow: 0 0 40px rgba(145,70,255,1);
 }
+
+#botStatus {
+    margin-top: 25px;
+    padding: 18px;
+    border-radius: 14px;
+    font-size: 20px;
+    text-align: center;
+    background: var(--card-bg);
+    box-shadow: var(--glow);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ONLINE */
+.status-online {
+    color: #00ff9d;
+    text-shadow: 0 0 12px #00ff9d;
+}
+
+/* OFFLINE */
+.status-offline {
+    color: #ff3b3b;
+    text-shadow: 0 0 12px #ff3b3b;
+}
