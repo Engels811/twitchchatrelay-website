@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Datenschutzerklärung – WonderLife Network</title>
+    <link rel="stylesheet" href="assets/style.css">
+
+    <style>
+        .policy-card {
+            background: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 16px;
+            box-shadow: var(--glow);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .policy-card h3 {
+            color: var(--accent);
+            margin-top: 0;
+            text-shadow: var(--glow);
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="title">WonderLife Network</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="login.html">Login</a>
+        <a href="docs.html">Docs</a>
+    </nav>
+
+    <button id="toggleTheme">☀️ / 🌙</button>
+</header>
+
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+    <!-- LOGO -->
+    <img src="assets/wl-logo.png" class="logo-glow" alt="WonderLife Logo">
+
+    <!-- PAGE TITLE -->
+    <h1 class="animated-title">DATENSCHUTZERKLÄRUNG</h1>
+    <p class="subline">German + English Version</p>
+
+
+    <!-- SECTION: GERMAN -->
+    <h2 class="section-title">🇩🇪 Deutsch</h2>
+
+    <div class="policy-card">
+        <h3>1. Verarbeitete Daten</h3>
+        <p>
+            Der Bot verarbeitet ausschließlich Daten, die für seine Funktion notwendig sind:
+            Discord IDs, Kanal-IDs, Twitch Nachrichten, Clip-Informationen, Live-Events
+            sowie technische Log-Informationen.
+        </p>
+    </div>
+
+    <div class="policy-card">
+        <h3>2. Datenspeicherung</h3>
+        <p>
+            Es werden keine dauerhaften personenbezogenen Daten gespeichert, außer
+            wenn bestimmte Funktionen es ausdrücklich benötigen (z. B. OAuth Login Tokens).
+        </p>
+    </div>
+
+    <div class="policy-card">
+        <h3>3. Weitergabe von Daten</h3>
+        <p>
+            Der WonderLife Bot verkauft oder teilt keinerlei Daten an Dritte.
+        </p>
+    </div>
+
+    <div class="policy-card">
+        <h3>4. Drittanbieter</h3>
+        <p>
+            Der Bot verwendet APIs von Twitch und Discord.  
+            Für deren Datenschutz gelten die jeweiligen Richtlinien.
+        </p>
+    </div>
+
+    <div class="policy-card">
+        <h3>5. Rechte der Nutzer</h3>
+        <p>
+            Nutzer können jederzeit Löschung oder Einsicht ihrer Daten anfordern,
+            sofern technisch vorhanden.  
+            Durch Entfernen des Bots vom Server endet jegliche Datenverarbeitung.
+        </p>
+    </div>
+
+
+
+    <!-- SECTION: ENGLISH -->
+    <h2 class="section-title">🇬🇧 English</h2>
+
+    <div class="policy-card">
+        <h3>1. Data Processed</h3>
+        <p>
+            The bot processes only the data required for operation:
+            Discord IDs, channel IDs, Twitch messages, clip metadata, live events,
+            and technical log information.
+        </p>
+    </div>
+
+    <div class="policy-card">
+        <h3>2. Data Storage</h3>
+        <p>
+            No long-term personal data is stored unless explicitly required by
+            specific features (e.g., OAuth login tokens).
+        </p>
+    </div>
+
+    <div class="policy-card">
+        <h3>3. Data Sharing</h3>
+        <p>
+            The WonderLife bot does not sell or share any collected data
+            with third parties.
+        </p>
+    </div>
+
+    <div class="policy-card">
+        <h3>4. Third-Party Services</h3>
+        <p>
+            The bot integrates with Twitch and Discord APIs.  
+            Their respective privacy policies apply.
+        </p>
+    </div>
+
+    <div class="policy-card">
+        <h3>5. User Rights</h3>
+        <p>
+            Users may request deletion or access to stored data if applicable.
+            Removing the bot from a server stops all processing immediately.
+        </p>
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+    © 2025 WonderLife Network – Privacy Policy
+</footer>
+
+
+<!-- DARKMODE SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
+    const toggle = document.getElementById("toggleTheme");
+
+    toggle.addEventListener("click", () => {
+        body.classList.toggle("light");
+        localStorage.setItem(
+            "theme",
+            body.classList.contains("light") ? "light" : "dark"
+        );
+    });
+
+    if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light");
+    }
+});
+</script>
+
+</body>
+</html>
