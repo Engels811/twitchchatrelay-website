@@ -2,34 +2,89 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Twitch Login – TwitchChat Relay</title>
+    <title>Login – WonderLife Network</title>
     <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-    TwitchChat Relay
+    <div class="title">WonderLife Network</div>
+
     <nav>
         <a href="index.html">Home</a>
         <a href="features.html">Features</a>
         <a href="login.html">Login</a>
         <a href="docs.html">Docs</a>
     </nav>
+
+    <button id="toggleTheme">☀️ / 🌙</button>
 </header>
 
-<div class="container">
-    <h1>Twitch Login</h1>
-    <p>Klicke unten, um deinen Twitch Account mit dem Bot zu verbinden.</p>
 
-    <a class="button" href="https://id.twitch.tv/oauth2/authorize?client_id=DEINCLIENTID&redirect_uri=https://engels811.github.io/twitch2discord-tos/callback&response_type=code&scope=user:read:email">
-        Mit Twitch verbinden
-    </a>
+<!-- MAIN CONTENT -->
+<div class="container">
+
+    <!-- WL LOGO -->
+    <img src="assets/wl-logo.png" class="logo-glow" alt="WonderLife Logo">
+
+    <!-- ANIMATED TITLE -->
+    <h1 class="animated-title">Twitch Login</h1>
+    <p class="subline">
+        Verbinde deinen Twitch Account sicher über den offiziellen OAuth Login.
+    </p>
+
+
+    <!-- HERO LOGIN AREA -->
+    <div class="login-box">
+
+        <h2 class="section-title">Mit Twitch verbinden</h2>
+
+        <p style="text-align:center; opacity:0.85;">
+            Klicke auf den Button unten, um dich über Twitch einzuloggen.
+        </p>
+
+        <!-- TWITCH LOGIN BUTTON -->
+        <a href="https://id.twitch.tv/oauth2/authorize?client_id=DEIN_TWITCH_CLIENT_ID&redirect_uri=https://engels811.github.io/twitch2discord-tos/callback&response_type=code&scope=user:read:email"
+           class="twitch-btn">
+            <span style="font-size:22px;">💜</span> Mit Twitch verbinden
+        </a>
+
+        <p style="text-align:center; margin-top:20px; opacity:0.7; font-size:14px;">
+            Du wirst zu Twitch weitergeleitet, um den Login zu bestätigen.
+        </p>
+
+    </div>
+
 </div>
 
+
+<!-- FOOTER -->
 <footer>
-    © 2025 TwitchChat Relay – Login
+    © 2025 WonderLife Network – Login Portal
 </footer>
+
+
+<!-- DARKMODE SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
+    const toggle = document.getElementById("toggleTheme");
+
+    toggle.addEventListener("click", () => {
+        body.classList.toggle("light");
+        localStorage.setItem(
+            "theme",
+            body.classList.contains("light") ? "light" : "dark"
+        );
+    });
+
+    if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light");
+    }
+});
+</script>
 
 </body>
 </html>
