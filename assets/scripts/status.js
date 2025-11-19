@@ -1,6 +1,7 @@
 async function loadBotStatus() {
     try {
-        const response = await fetch("http://193.46.81.88/bot-status.json?cacheBust=" + Date.now());
+        // NEUER API ENDPOINT
+        const response = await fetch("http://193.46.81.88:8877/status?cache=" + Date.now());
         const data = await response.json();
 
         const el = document.getElementById("botStatus");
@@ -25,5 +26,6 @@ async function loadBotStatus() {
     }
 }
 
+// Alle 15 Sekunden aktualisieren
 setInterval(loadBotStatus, 15000);
 loadBotStatus();
