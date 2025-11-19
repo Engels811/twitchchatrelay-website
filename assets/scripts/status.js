@@ -1,7 +1,7 @@
 async function loadBotStatus() {
     try {
         // NEUER API ENDPOINT
-        const response = await fetch("http://193.46.81.88:8877/status?cache=" + Date.now());
+        const response = await fetch("http://193.46.81.88:8877/status?cacheBust=" + Date.now());
         const data = await response.json();
 
         const el = document.getElementById("botStatus");
